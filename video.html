@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: white;
+      color: #333;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0;
+    }
+    h1 {
+
+    }
+    #player {
+      margin: auto;
+
+    }
+  </style>
+</head>
+<body>
+
+<h1>Video from Middlemarch YouTube</h1>
+
+<div id="player"></div>
+
+<script src="https://www.youtube.com/player_api"></script>
+
+<script>
+  var player;
+
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('player', {
+      height: '720',
+      width: '1280',
+      videoId: '9HdX37DZth0',
+      events: {
+        'onReady': onPlayerReady,
+      }
+    });
+  }
+
+  function onPlayerReady(event) {
+    event.target.playVideo();
+  }
+</script>
+
+</body>
+</html>
